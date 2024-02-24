@@ -18,6 +18,7 @@ app.use(
 app.use(express.json());
 
 // Middlewares
+app.use(express.static("web"));
 app.use((req, res, next) => {
   console.log(`Request Type: ${req.method}`);
   console.log(`Content Type: ${req.headers["content-type"]}`);
@@ -27,7 +28,6 @@ app.use((req, res, next) => {
 });
 
 // Rota aberta - Rota pública - Página login
-app.use(express.static("web"));
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/web/login/login.html");
 });
@@ -35,7 +35,7 @@ app.get("/", (req, res) => {
 // Rotas fechadas - Rotas privadas
 app.get("/Home?:user", (req, res) => {
   const user = req.params.user;
-  res.sendFile(__dirname + "/web/Home/home.html");
+  res.sendFile(__dirname + "/web/home/dmthysgoficha.html");
 });
 
 app.post("/user/:user", checkToken, async (req, res) => {
@@ -77,6 +77,9 @@ function checkToken(req, res, next) {
 // rotas da API
 const authRoute = require("./routes/authRoute");
 app.use("/auth", authRoute);
+
+const fichaRoute = require("./routes/fichaRoute");
+app.use("/ficha", fichaRoute);
 
 // entregar uma porta
 const DB_USER = process.env.DB_USER;

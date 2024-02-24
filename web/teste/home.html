@@ -14,15 +14,13 @@
     <div class="ficha-rpg">
       <h2>Ficha de RPG</h2>
       <form>
-        <label for="nome-personagem">Nome do Personagem:</label>
         <input
           type="text"
           id="nome-personagem"
           name="nome-personagem"
+          placeholder="Nome do Personagem"
           required
-        /><br /><br />
-
-        <label for="classe">Classe:</label>
+        />
         <select id="classe" name="classe" required>
           <option value="Bárbaro">Bárbaro</option>
           <option value="Bardo">Bardo</option>
@@ -37,11 +35,7 @@
           <option value="Paladino">Paladino</option>
           <option value="Patrulheiro">Patrulheiro</option>
         </select>
-        <br /><br />
-
-        <label for="nivel">Nível:</label>
-        <input type="number" id="nivel" name="nivel" disabled /><br /><br />
-
+        <input type="lvl" id="nivel" name="nivel" disabled /><br /><br />
         <label for="antecedente">Antecedente:</label>
         <input
           type="text"

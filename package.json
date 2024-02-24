@@ -1,6 +1,6 @@
 {
   "name": "dndptbr",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Ficha interativa do RPG Dungeons & Dragons com integração em API",
   "main": "index.js",
   "scripts": {
