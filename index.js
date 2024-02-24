@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
+const cors = require("cors");
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(
 app.use(express.json());
 
 // Middlewares
+app.use(cors());
 app.use(express.static("web"));
 app.use((req, res, next) => {
   console.log(`Request Type: ${req.method}`);
